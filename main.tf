@@ -1,10 +1,10 @@
 terraform {
   required_version = ">= 0.13"
   backend "s3" {
-    bucket  = "sagemaker-project-template"
+    bucket  = "playing-with-gan"
     key     = "terraform/state"
     region  = "us-west-2"
-    profile = "sagemaker_project_template"
+    profile = "playing_with_gan"
   }
   required_providers {
     aws = {
@@ -15,7 +15,7 @@ terraform {
 }
 
 provider "aws" {
-  profile = "sagemaker_project_template"
+  profile = "playing_with_gan"
   region  = "us-west-2"
 }
 
@@ -31,7 +31,7 @@ module "ecr_image" {
   source             = "github.com/faddey-w/terraform-aws-ecr-image?ref=v1.0.2"
   dockerfile_dir     = "docker"
   ecr_repository_url = aws_ecr_repository.model_environments.repository_url
-  aws_profile = "sagemaker_project_template"
+  aws_profile = "playing_with_gan"
 }
 output "worker_image_url" {
   value = module.ecr_image.ecr_image_url
@@ -68,7 +68,7 @@ output "subnet_id_default" {
 resource "aws_subnet" "jobs" {
   vpc_id = data.aws_vpc.default.id
   availability_zone = "us-west-2b"
-  cidr_block = "172.31.65.0/24"  # TODO this depends on VPC's CIDR block
+  cidr_block = "172.31.66.0/24"  # TODO this depends on VPC's CIDR block
   # and must not conflict with existing (default) subnets
 }
 output "subnet_id_jobs" {

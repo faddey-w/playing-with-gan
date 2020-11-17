@@ -1,5 +1,5 @@
 import argparse
-from my_project import infrastructure
+from playing_with_gan import infrastructure
 
 
 def main():
@@ -14,7 +14,7 @@ def main():
 
     infrastructure.run_job(
         src_s3_path=src_pkg_s3_path,
-        entry_point_module="my_project.show_worker_env_job",
+        entry_point_module="playing_with_gan.show_worker_env_job",
         instance_count=1,
         instance_type="ml.m5.large",
         job_base_name="show-worker-env",

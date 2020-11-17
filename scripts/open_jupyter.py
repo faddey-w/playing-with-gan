@@ -9,7 +9,7 @@ def main():
     parser.add_argument("name", choices=["small"])
     args = parser.parse_args()
 
-    session = boto3.Session(profile_name="sagemaker_project_template")
+    session = boto3.Session(profile_name="playing_with_gan")
     client = session.client("sagemaker")
 
     instance = client.describe_notebook_instance(NotebookInstanceName=args.name)

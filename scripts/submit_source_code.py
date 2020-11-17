@@ -1,5 +1,5 @@
 import argparse
-from my_project import infrastructure, paths
+from playing_with_gan import infrastructure, paths
 
 
 def main():

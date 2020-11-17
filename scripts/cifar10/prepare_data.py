@@ -1,5 +1,5 @@
 import argparse
-from my_project import infrastructure
+from playing_with_gan import infrastructure
 
 
 def main():
@@ -16,7 +16,7 @@ def main():
 
     infrastructure.run_job(
         src_s3_path=src_pkg_s3_path,
-        entry_point_module="my_project.cifar10_example.jobs.prepare_data",
+        entry_point_module="playing_with_gan.cifar10_example.jobs.prepare_data",
         instance_count=1,
         instance_type="ml.m5.large",
         job_base_name="cifar10-prepare-data",
