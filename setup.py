@@ -11,7 +11,7 @@ setup(
         "torch==1.4.0",
         "torchvision==0.5.0",
         "pandas==1.0.5",
-        "numpy==1.19.2",
+        "numpy==1.22.0",
         "sagemaker==2.15.0",
     ],
 )
